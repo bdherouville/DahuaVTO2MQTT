@@ -90,7 +90,7 @@ class DahuaVTOClient(asyncio.Protocol):
         self.keep_alive_interval = 0
         self.transport = None
 
-        self.mqtt_client = mqtt.Client(client_id=self.mqtt_broker_username, clean_session=True)
+        self.mqtt_client = mqtt.Client(client_id=self.mqtt_broker_username, clean_session=False, transport="tcp")
 
         self._loop = asyncio.get_event_loop()
 
