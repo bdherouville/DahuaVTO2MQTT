@@ -146,6 +146,8 @@ class DahuaVTOClient(asyncio.Protocol):
                 _LOGGER.error(f"Failed to reconnect, retry in 60 seconds, error: {ex}, Line: {exc_tb.tb_lineno}")
 
                 sleep(60)
+                
+            sleep(5)
 
     def connection_made(self, transport):
         _LOGGER.debug("Connection established")
